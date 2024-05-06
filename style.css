@@ -1,0 +1,274 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --color-base-white: #ffffff;
+    --color-base-gray-100: #f5f5f5;
+    --color-base-gray-300: #8d8d99;
+    --color-base-gray-900: #202024;
+    --color-base-cyan: #065E7C;
+
+    font-family: "Mulish", sans-serif;
+}
+
+html, body, input {
+    font-family: "Mulish", sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: var(--color-base-white);
+}
+
+.app {
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+    height: 100vh;
+    align-content: center;
+}
+
+.container {
+    padding: 1.6rem 3.2rem;
+    width: min(43rem, 100%);
+    margin: 0 auto;
+}
+
+
+
+main{
+    overflow-y: scroll;
+    background-color: var(--color-base-gray-100);
+    
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 2.55rem;
+    background-color: var(--color-base-cyan);
+}
+
+header form {
+    flex: 1;
+    font-weight: 700;
+}
+
+.input-wrapper label {
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    background-color: rgba(255, 255, 255, .2);
+    border: 0;
+    border-radius: .4rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-base-white)
+}
+
+.input-wrapper input::placeholder {
+    color: var(--color-base-white)
+}
+
+.avatar {
+    width: 4.2rem;
+    height: 4.2rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+main h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: var(--color-base-gray-900);
+    margin: 3.1rem 2.2rem .8rem;
+}
+
+.emoji {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin: 0 2.2rem 3.1rem;
+}
+
+.emoji img {
+    width: 4rem;
+    height: 4rem;
+}
+
+main .container {
+    padding: 0;
+}
+
+figure img {
+    width: min(43rem, 100%);
+}
+
+
+figure p {
+    width: 38.2rem;
+    margin: 0 2.2rem;
+    margin-bottom: 3.4rem;
+}
+
+.related {
+    margin-top: 3.2rem;
+    margin: 0 2.2rem;
+    display: grid;
+    grid-template-columns: repeat(1, 5fr);
+    gap: 3.2rem;
+    max-width: 38.4rem;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem
+}
+
+.item img {
+    margin-left: 2.2;
+    width: 15.1rem;
+    height: 8.4rem;
+    border-radius: .8rem;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+
+   
+    transition: all 200ms ease-out;
+}
+
+.item img:hover {
+    filter: hue-rotate(7deg) contrast(101%) saturate(150%);
+    transform: scale(1.1) rotate(-2deg);
+}
+
+.details h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+
+.headline span {
+    font-size: 1.4rem;
+}
+
+footer.container {
+    padding: 0;
+}
+
+footer p {
+    text-align: center;
+    padding: 1.6rem;
+    font-weight: 600;
+
+    color: var(--color-base-white);
+    background-color: var(--color-base-cyan);
+
+}
+
+section.related {
+    margin-bottom: 39px;
+}
+
+header {
+    --startY: -100%;
+    animation: move .2s;
+}
+
+footer {
+    --startY: 100%;
+    animation: move .2s;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(var(--startY));
+    }
+}
+
+.item {
+    --delay: .4s;
+    animation: appear .4s var(--delay) backwards;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(.7);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@media (min-width: 768px) {
+    main {
+        max-width: 1440px;
+        display: flex;
+        gap: 3.2rem;
+        margin: 0 auto;
+        
+    }
+
+    header {
+        width: 100%;
+    }
+
+    .container {
+        width: 803px;
+        width: 100%;
+        
+    }
+
+    main > div {
+        margin-bottom: 39px;
+    }
+
+    .photo {
+        width: max(803px, 100%)
+    }
+    figure img {
+        width: max(803px, 100%)
+    }
+  
+
+    figure p {
+        width: max(800px);
+    }
+
+    .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: max(803px, 100%)
+    }
+
+    .emoji {
+        margin: 3.1rem 2.2rem .8rem;
+    }
+
+    .related {
+        width: max(384px);
+        margin-right: 110px;
+    }
+
+
+}
